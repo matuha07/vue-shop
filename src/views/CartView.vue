@@ -43,15 +43,15 @@
                 <div class="col">
                     <h3> Total: {{ totalPrice }}$</h3>
 
-                    <button type="button" class="btn btn-success">Buy</button>
+                    <router-link to="/order" type="button" class="btn btn-success">Buy</router-link>
                 </div>x
             </div>
 
         </div>
 
         <div v-else>
-            <p class="alert alert-warning">Ваша корзина пуста.</p>
-            <router-link to="/" class="btn btn-primary">Вернуться к каталогу</router-link>
+            <p class="alert alert-warning">Your cart is empty</p>
+            <router-link to="/" class="btn btn-primary">Return to catalogue</router-link>
         </div>
     </div>
 </template>

@@ -13,19 +13,22 @@ export const useCartStore = defineStore('cart', () => {
         }
     };
 
-
     const removeFromCart = (productId) => {
         const index = cartItems.value.findIndex(item => item.id === productId);
         if (index !== -1) {
             cartItems.value.splice(index, 1);
-        };
-    }
+        }
+    };
 
     const updateQuantity = (productId, quantity) => {
         const item = cartItems.value.find((item) => item.id === productId);
         if (item) {
             item.quantity = quantity > 0 ? quantity : 1;
         }
+    };
+
+    const clearCart = () => {
+        cartItems.value = [];
     };
 
     const totalPrice = computed(() =>
@@ -37,6 +40,7 @@ export const useCartStore = defineStore('cart', () => {
         addToCart,
         removeFromCart,
         updateQuantity,
+        clearCart,
         totalPrice,
     };
 });
